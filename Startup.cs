@@ -51,7 +51,7 @@ namespace Order_Board
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-
+            //инициализация бд (установка ролей в бд)
             using (var scope = app.ApplicationServices.CreateScope())
             {
                 AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();

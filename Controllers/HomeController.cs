@@ -17,26 +17,11 @@ namespace Order_Board.Controllers
             db = context;
         }
 
-        //[Authorize(Roles = "Worker")]
-        //public IActionResult Worker()
-        //{
-        //    return View();
-        //}
-
-        //[Authorize(Roles = "Customer")]
-        //public IActionResult Customer()
-        //{
-        //    return View();
-        //}
-        [Authorize(Roles = "Customer, Worker")]
         public IActionResult Index()
         {
             return View();
         }
-        //public IActionResult Privacy()
-        //{
-        //    return View();
-        //}
+
         [Authorize(Roles = "Customer, Worker")]
         public async Task<IActionResult> OrdersAsync()
         {
@@ -69,10 +54,10 @@ namespace Order_Board.Controllers
             return View("AllOrders", orderObj);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //public IActionResult Error()
+        //{
+        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        //}
     }
 }

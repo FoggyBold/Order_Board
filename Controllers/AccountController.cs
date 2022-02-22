@@ -76,14 +76,6 @@ namespace Order_Board.Controllers
                     }
 
                     return RedirectToAction("Index", "Home");
-                    //if (userRole.Name == "Customer")
-                    //{
-                    //    return RedirectToAction("Customer", "Home");
-                    //}
-                    //else
-                    //{
-                    //    return RedirectToAction("Worker", "Home");
-                    //}
                 }
                 else
                     ModelState.AddModelError("", "Некорректные логин и(или) пароль");
@@ -109,6 +101,7 @@ namespace Order_Board.Controllers
 
         private async Task Authenticate(User user)
         {
+            //благодаря этому мы понимаем, кто сидит на сайте
             // создаем один claim
             var claims = new List<Claim>
             {

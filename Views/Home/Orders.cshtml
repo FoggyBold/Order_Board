@@ -1,7 +1,6 @@
 ﻿@using Order_Board.Data.Models
 <div class="row mt-5 mb-2">
     @{
-
         foreach(Order order in Model.Orders)
         {
             if (User.IsInRole("Customer"))
