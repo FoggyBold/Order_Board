@@ -1,0 +1,29 @@
+﻿@using Order_Board.Data.Models
+@model Order
+
+<div class="col-lg-4"> 
+        <h2>Заказ: @Model.Name</h2>
+        <p>@Model.Description</p>
+        <p>Цена: @Model.Cost.ToString("c")</p>
+        @{
+        if(!Model.isInWork)
+        {
+            <div style="background-color:red">
+                <p>Не взято в работу</p>
+            </div>
+        }
+        else if(!Model.isReady)
+        {
+            <div style="background-color:yellow">
+                <p>Не завершено</p>
+            </div>
+        }
+        else if(Model.isReady)
+        {
+            <div style="background-color:green">
+            <p >Завершено</p>
+            </div>
+        }
+    }
+        
+    </div>

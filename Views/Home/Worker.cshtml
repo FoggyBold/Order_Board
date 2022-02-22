@@ -1,0 +1,11 @@
+﻿@using Order_Board.Data.Models
+@model Order
+
+<div class="col-lg-4"> 
+        <h2>Заказ: @Model.Name</h2>
+        <p>@Model.Description</p>
+        <p>Цена: @Model.Cost.ToString("c")</p>
+        <p>
+            @Html.ActionLink("Завершить","End","Order", new {orderId=Model.Id})
+        </p>
+    </div>
